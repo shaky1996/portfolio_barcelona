@@ -8,5 +8,8 @@
     "start": "node server.js"
   },
   "author": "Shakhzod Yuldashev",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1"
+  }
 }
