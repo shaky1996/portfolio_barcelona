@@ -91,6 +91,7 @@ body {
     
     width: 80%;
     height: 100%;
+    object-position: 0px 1%;
     object-fit: cover; /* Ensure the video fills the container */
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -98,27 +99,7 @@ body {
     
 }
 
-.video-text-overlay {
-    position: absolute;
-    
-    top: 73%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: white;
-    z-index: 1; /* Ensure the text overlay is above the video */
 
-}
-
-.video-text-overlay h2 {
-    font-size: 24px;
-    
-}
-
-.video-text-overlay p {
-    font-size: 18px;
-    color: #edbb00;
-}
 
 
 
@@ -688,5 +669,8 @@ body {
 
 }
 
-/* Extra large devices (large desktops, 1200px and down) */
-@media only screen and (max-width: 1200px) {  }
+@media only screen and (max-width: 1500px) {
+    .video-container  {
+        height: 500px;
+    }
+}

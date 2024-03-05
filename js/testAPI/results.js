@@ -58,4 +58,4 @@ const results = async () => {
 };
 
 // Call the function to fetch and process results
-// results();
+results();

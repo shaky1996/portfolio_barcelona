@@ -639,7 +639,8 @@ const nextFixture = async ()=>{
     } catch (error) {
         console.log(error);
     }
-}; // nextFixture();
+};
+nextFixture();
 
 },{}]},["bIudQ","7EmOq"], "7EmOq", "parcelRequire7389")
 

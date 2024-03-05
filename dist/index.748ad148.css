@@ -75,30 +75,12 @@ input[type="checkbox"] {
 }
 
 .video-container video {
+  object-position: 0px 1%;
   object-fit: cover;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   width: 80%;
   height: 100%;
-}
-
-.video-text-overlay {
-  text-align: center;
-  color: #fff;
-  z-index: 1;
-  position: absolute;
-  top: 73%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.video-text-overlay h2 {
-  font-size: 24px;
-}
-
-.video-text-overlay p {
-  color: #edbb00;
-  font-size: 18px;
 }
 
 .content-main {
@@ -627,6 +609,12 @@ input[type="checkbox"] {
   .our-story-section h1 {
     color: #fff;
     font-size: 20px;
+  }
+}
+
+@media only screen and (width <= 1500px) {
+  .video-container {
+    height: 500px;
   }
 }
 /*# sourceMappingURL=index.748ad148.css.map */

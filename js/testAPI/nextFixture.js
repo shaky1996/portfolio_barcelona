@@ -67,4 +67,4 @@ const nextFixture = async () => {
     }
 };
 
-// nextFixture();
+nextFixture();

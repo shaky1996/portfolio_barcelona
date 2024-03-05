@@ -39,5 +39,5 @@ const standingsTable = async () => {
     }
 }
 
-// standingsTable();
+standingsTable();
 

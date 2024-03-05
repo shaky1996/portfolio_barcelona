@@ -630,8 +630,9 @@ const results = async ()=>{
     } catch (error) {
         console.error(error);
     }
-}; // Call the function to fetch and process results
- // results();
+};
+// Call the function to fetch and process results
+results();
 
 },{}]},["7ppK9","lyqDO"], "lyqDO", "parcelRequire7389")
 

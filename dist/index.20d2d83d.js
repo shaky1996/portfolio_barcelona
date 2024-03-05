@@ -618,8 +618,8 @@ const standingsTable = async ()=>{
     } catch (error) {
         console.log(error);
     }
-} // standingsTable();
-;
+};
+standingsTable();
 
 },{}]},["qNtCz","1Adxs"], "1Adxs", "parcelRequire7389")
 
