@@ -1,20 +1,36 @@
-import fixtureData from './fixtureData.js';
+const API_KEY = process.env.API_KEY
+const URL = process.env.URL_NEXT_GAME
 
-const nextFixture = () => {
-    const fixture = fixtureData[0]; // Get the first fixture object from the fixtureData array
+const nextFixture = async () => {
+    const url = URL;
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': API_KEY,
+            'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+        }
+    };
     
-    // Check if fixture data exists
-    if (fixture) {
-        const {
-            teams,
-            league, // Fetch league from fixture directly
-            fixture: { venue, date } // Destructure venue and date from fixture
-        } = fixture;
+    // try {
+    //     const response = await fetch(url, options);
+    //     const result = await response.text();
+    //     console.log(result);
+    // } catch (error) {
+    //     console.error(error);
+    // }
 
-        // Check if venue data exists
-        if (venue) {
-            const homeTeam = teams.home;
-            const awayTeam = teams.away;
+    try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+        console.log(data);
+
+        // Check if fixture data exists
+        if (data.response && data.response[0]) {
+            const fixture = data.response[0];
+            const {
+                fixture: { date, venue },
+                teams: { home, away }
+            } = fixture;
 
             const gameDate = new Date(date);
             const options = {
@@ -31,9 +47,8 @@ const nextFixture = () => {
             const nextGameContainer = document.getElementById('nextGame');
 
             nextGameContainer.innerHTML = `
-                
                 <div class="team-home">
-                    <img src="${homeTeam.logo}" alt="${homeTeam.name} Logo" class="nextGame-team-logo">
+                    <img src="${home.logo}" alt="${home.name} Logo" class="nextGame-team-logo">
                 </div>
                 <div class="game-info">
                     <p><i class="fa-regular fa-calendar"></i> ${localDate}</p>
@@ -41,15 +56,15 @@ const nextFixture = () => {
                     <p><i class="fa-solid fa-location-dot"></i> ${venue.city}</p>
                 </div>
                 <div class="team-away">
-                    <img src="${awayTeam.logo}" alt="${awayTeam.name} Logo" class="nextGame-team-logo">
+                    <img src="${away.logo}" alt="${away.name} Logo" class="nextGame-team-logo">
                 </div>
             `;
         } else {
-            console.error('Error: Venue data is missing.');
+            console.error('Error: Fixture data is missing.');
         }
-    } else {
-        console.error('Error: Fixture data is missing.');
+    } catch (error) {
+        console.log(error);
     }
 };
 
-nextFixture();
+// nextFixture();

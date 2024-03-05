@@ -2,14 +2,18 @@
   "name": "barcelona",
   "version": "1.0.0",
   "description": "FC Barcelona",
-  "main": "server.js",
+  "source": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "parcel --open"
   },
   "author": "Shakhzod Yuldashev",
   "license": "ISC",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.5.1"
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
   }
 }

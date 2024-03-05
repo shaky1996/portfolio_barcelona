@@ -1,14 +1,19 @@
 import newsData from './newsData.js';
 
 const news = () => {
-    const leftNews = newsData.slice(0, 3); // Get the first 2 news  from the newsData array
-    const rightNews = newsData.slice(3, 9);
-    // const belowNews = newsData.slice(4, 10);
+    
+
+
+
+
+    const leftNews = newsData.slice(0, 3); // Get the first 3 news  from the newsData 
+    const rightNews = newsData.slice(3, 9); 
+    
     
 
     const leftNewsContainer = document.getElementById('leftNews');
     const rightNewsContainer = document.getElementById('rightNews');
-    // const belowNewsContainer = document.getElementById('belowNews');
+    
 
     leftNewsContainer.innerHTML = leftNews.map(leftNewsItem => `
                 
@@ -31,17 +36,5 @@ const news = () => {
         </div>
     `).join('');
 }
-
-//     belowNewsContainer.innerHTML = belowNews.map(belowNewsItem => `
-//         <div class="belowNews">
-//             <img src="${belowNewsItem.news_img}" alt="${belowNewsItem.title} Logo" class="belowNews-img">
-//         </div>
-//         <div class="belowNews-info">
-//             <h1>${belowNewsItem.title}</h1>
-//             <p>${belowNewsItem.short_desc}</p>
-//             <a href="${belowNewsItem.url}" target="_blank">Read More</a>
-//         </div>
-//     `).join('');
-// };
 
 news();
