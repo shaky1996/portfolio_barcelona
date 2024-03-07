@@ -12,13 +12,12 @@ const results = async () => {
     };
 
     try {
-        // Fetch data from the API using the provided URL and options
         const response = await fetch(URL, options);
         const data = await response.json();
 
         // Check if fixture data exists in the response
         if (data.response && data.response[0]) {
-            // Extract necessary data from the response
+            // Extracting necessary data from the response
             const lastResult = data.response[0];
             const {
                 teams,
@@ -34,7 +33,7 @@ const results = async () => {
             };
             const localDate = gameDate.toLocaleDateString(undefined, options);
 
-            // Prepare the HTML structure with corresponding divs
+           
             const lastGameContainer = document.getElementById('lastGame');
             lastGameContainer.innerHTML = `
                 <div class="team-home">
@@ -54,8 +53,8 @@ const results = async () => {
         }
     } catch (error) {
         console.error(error);
+        
     }
 };
 
-// Call the function to fetch and process results
 results();

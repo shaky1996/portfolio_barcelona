@@ -600,10 +600,11 @@ const news = async ()=>{
         const result = await response.json();
         console.log(result);
         const newsData = result;
-        const leftNews = newsData.slice(0, 3); // Get the first 3 news  from the newsData
-        const rightNews = newsData.slice(3, 9);
+        const leftNews = newsData.slice(0, 3); // Get the first 3 from API response news for left bigger news section
+        const rightNews = newsData.slice(3, 9); // Get the rest news from API response for smaller right news section
         const leftNewsContainer = document.getElementById("leftNews");
         const rightNewsContainer = document.getElementById("rightNews");
+        //Map through API response to display each element seprately for left bigger news
         leftNewsContainer.innerHTML = leftNews.map((leftNewsItem)=>`
                 
                 <div class="leftNews">
@@ -613,6 +614,7 @@ const news = async ()=>{
                     </a>
                 </div>
             `).join("");
+        //Map through API response to display each element seprately for right smaller news
         rightNewsContainer.innerHTML = rightNews.map((rightNewsItem)=>`
         <div class="rightNews">
         <a href="${rightNewsItem.url}" target="_blank">

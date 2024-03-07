@@ -595,13 +595,6 @@ const nextFixture = async ()=>{
             "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
         }
     };
-    // try {
-    //     const response = await fetch(url, options);
-    //     const result = await response.text();
-    //     console.log(result);
-    // } catch (error) {
-    //     console.error(error);
-    // }
     try {
         const response = await fetch(url, options);
         const data = await response.json();
@@ -610,6 +603,7 @@ const nextFixture = async ()=>{
         if (data.response && data.response[0]) {
             const fixture = data.response[0];
             const { fixture: { date, venue }, teams: { home, away } } = fixture;
+            // Formatting date into Month/Date/Year
             const gameDate = new Date(date);
             const options = {
                 year: "numeric",
@@ -617,6 +611,7 @@ const nextFixture = async ()=>{
                 day: "numeric"
             };
             const localDate = gameDate.toLocaleDateString(undefined, options);
+            // Formatting time into Hour/Minutes
             const localTime = gameDate.toLocaleTimeString([], {
                 hour: "2-digit",
                 minute: "2-digit"

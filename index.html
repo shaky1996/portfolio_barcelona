@@ -17,59 +17,51 @@
     <div  id="home">
         <!-- NAVBAR -->
           <nav class="navbar">
-            <!-- LOGO -->
+            <!-- NAVBAR LOGO -->
             <div class="logo">FC BARCELONA</div>
-        
             <!-- NAVIGATION MENU -->
             <ul class="nav-links">
+                <!-- HAMBURGER MENU LOGIC -->
+                    <!-- By hiding the checkbox input element and associating it with the label element, users can toggle the checkbox's state by clicking the label, even though the checkbox itself is not visible -->
               <input type="checkbox" id="checkbox_toggle" />
               <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-        
-              <!-- NAVIGATION MENUS -->
               <div class="menu">
-        
                 <li><a href="#home">Home</a></li>
                 <li><a href="#news">News</a></li>
-        
                 <li>
                   <a href="#tickets">Tickets</a>
                 </li>
                 <li><a href="#ourStory">Our Story</a></li>
-                
               </div>
             </ul>
           </nav>
-        </body>
-</nav>
+    </div>
 
         <!-- MAIN -->
         <main>
-            <!-- VIDEO SECTION -->
+            <!-- VIDEO SECTION / BACKGROUND TOP -->
             <section class="video_section">
                 <div class="video-container">
                     <video src="./assets/videos/BarcaIntro1.mp4" muted autoplay></video>
-                    
+                    <img src="./assets/images/bg-mobile.jpg" alt="Barca Background" />
                 </div>
             </section>
             <!-- CONTENT SECTION -->
             <section class="content-main">
                  <!-- COLUMN 1 -->
                 <div class="column-1">
-
                     <!-- Next Game -->
                     <div class="content-main-nextGame" >
                         <h1 class="nextGame-h1"></i>Next Game</h1>
                             <div id="nextGame" class="Game-body">
                             </div>
                     </div>
-
                     <!-- Last Game -->
                     <div class="content-main-lastGame">
                         <h1 class="nextGame-h1"></i>Last Game</h1>
                             <div id="lastGame" class="Game-body">
                             </div>
                     </div>
-
                      <!-- Standings -->
                     <div class="content-main-standings">
                         <h1 class="standings-h1">League Standings</h1>
@@ -88,47 +80,41 @@
                         </table>
                     </div>
                 </div>
-
                     <!-- COLUMN 2 -->
                     <div class="column-2">
-
                         <!-- News -->
                         <div class="content-main-news" id="news">
                             <h1>Latest News</h1>
                             <div  class="newsBody">
-                            
                                 <div class="news-item-left" id="leftNews">
-                                    <h1>Left Big</h1>
-                                <!-- Latest 3 news will be displayed here -->
+                                <!-- Latest 3 big news displayed here -->
                                 </div>
                                 <div class="news-item-right" id="rightNews">
-                                <!-- 5 smaller news articles will be displayed here -->
-                                    <h1>Right small</h1>
+                                <!-- 5 smaller news displayed here -->
                                 </div>
-                            </div>
                             </div>
                         </div>
                     </div>
-
                 </section>
 
                 <!-- YOU TUBE Section -->
                 <section class="youtube-section">
                     <div class="youtube-container">
-                    <div class="youtube-video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/lQvBt3tWv7M?si=pkS8GqPZDIcbgTTf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <div class="youtube-video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/lQvBt3tWv7M?si=pkS8GqPZDIcbgTTf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="youtube-description">
+                            <h1>Relive best moments of 2023</h1>
+                                <p>La Liga champions, farewell to Camp Nou, Bonmati's Ballon d'or and more</p>
+                        </div>
                     </div>
-                    <div class="youtube-description">
-                        <h1>Relive best moments of 2023</h1>
-                            <p>La Liga champions, farewell to Camp Nou, Bonmati's Ballon d'or and more</p>
-                    </div>
-                </div>
                 </section>
 
                 <!-- TICKET SECTION -->
                 <section class="ticket-section" id="tickets">
                     <h1>Barca Tickets</h1>
                     <div class="ticket-container">
+                        <!-- Tickets diplsyaed here with 2 rows if screen = lg /// or diplsyaed as a column if screen =< md -->
                         <div class="ticket-card" id="ticket-card">
                         </div>
                     </div>
@@ -196,7 +182,6 @@
 
         <!-- FOOTER -->
         <footer class="footer">
-    
             <div class="footer-social">
                 <a href="https://www.fcbarcelona.com/en/" ><img src="./assets/images/FCB_Icon.png" class="footer-club-icon" /></a>
                 <a href="https://www.instagram.com/fcbarcelona/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
@@ -214,9 +199,9 @@
     </div>
     
     <script>
+        // To make navbar on smaller screens close once user clicks on the link
         document.addEventListener('DOMContentLoaded', function() {
           const links = document.querySelectorAll('.menu a');
-      
           links.forEach(function(link) {
             link.addEventListener('click', function() {
               const checkbox = document.getElementById('checkbox_toggle');

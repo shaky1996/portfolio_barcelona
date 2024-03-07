@@ -591,7 +591,7 @@ const ticketCardContainer = document.getElementById("ticket-card");
 // Divide ticket data into two groups of three each
 const firstRowTickets = (0, _ticketDataJsDefault.default).slice(0, 3);
 const secondRowTickets = (0, _ticketDataJsDefault.default).slice(3);
-// Create HTML for the first row of cards
+// First row of cards
 const firstRowHTML = firstRowTickets.map((ticket)=>`
     <div class="card">
         <a href="${ticket.url}" target="_blank">
@@ -599,7 +599,7 @@ const firstRowHTML = firstRowTickets.map((ticket)=>`
         </a>
     </div>
 `).join("");
-// Create HTML for the second row of cards
+// Second row of cards
 const secondRowHTML = secondRowTickets.map((ticket)=>`
     <div class="card">
         <a href="${ticket.url}" target="_blank">
@@ -607,7 +607,7 @@ const secondRowHTML = secondRowTickets.map((ticket)=>`
         </a>
     </div>
 `).join("");
-// Append HTML for both rows to the container
+// Putting both rows to the container
 ticketCardContainer.innerHTML = `
     <div class="row-1">${firstRowHTML}</div>
     <div class="row-2">${secondRowHTML}</div>

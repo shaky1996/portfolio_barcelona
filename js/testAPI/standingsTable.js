@@ -19,6 +19,8 @@ const standingsTable = async () => {
 
         const standingsDatas = data.response;
         const tbody = document.getElementById('standingsBody');
+
+        //API gives 20 teams with their data. Displaying data for each team separately
         standingsDatas[0].league.standings[0].forEach((team) => {
             const row = document.createElement('tr');
             row.innerHTML = `
@@ -36,6 +38,7 @@ const standingsTable = async () => {
     } 
          catch (error) {
         console.log(error);
+        
     }
 }
 
