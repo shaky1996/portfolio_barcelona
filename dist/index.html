@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Barcelona</title>
+    <link rel="icon" href="/FCB_Icon.37c8cec7.png" type="image/png">
+    <link rel="stylesheet" href="/index.748ad148.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Noto+Sans+Cham:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+<body>
+    <!-- LOADER -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <img src="/FCB_Icon.37c8cec7.png" alt="Loader">
+        </div>
+    </div>
+
+    <div id="home">
+        <!-- NAVBAR -->
+          <nav class="navbar">
+            <!-- NAVBAR LOGO -->
+            <div class="logo">FC BARCELONA</div>
+            <!-- NAVIGATION MENU -->
+            <ul class="nav-links">
+                <!-- HAMBURGER MENU LOGIC -->
+                    <!-- By hiding the checkbox input element and associating it with the label element, users can toggle the checkbox's state by clicking the label, even though the checkbox itself is not visible -->
+              <input type="checkbox" id="checkbox_toggle">
+              <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+              <div class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li>
+                  <a href="#tickets">Tickets</a>
+                </li>
+                <li><a href="#ourStory">Our Story</a></li>
+              </div>
+            </ul>
+          </nav>
+    </div>
+
+        <!-- MAIN -->
+        <main>
+            <!-- VIDEO SECTION / BACKGROUND TOP -->
+            <section class="video_section">
+                <div class="video-container">
+                    <video src="/BarcaIntro1.31a7553a.mp4" muted="" autoplay=""></video>
+                    <img src="/bg-mobile.b9339845.jpg" alt="Barca Background">
+                </div>
+            </section>
+            <!-- CONTENT SECTION -->
+            <section class="content-main">
+                 <!-- COLUMN 1 -->
+                <div class="column-1">
+                    <!-- Next Game -->
+                    <div class="content-main-nextGame">
+                        <h1 class="nextGame-h1">Next Game</h1>
+                            <div id="nextGame" class="Game-body">
+                            </div>
+                    </div>
+                    <!-- Last Game -->
+                    <div class="content-main-lastGame">
+                        <h1 class="nextGame-h1">Last Game</h1>
+                            <div id="lastGame" class="Game-body">
+                            </div>
+                    </div>
+                     <!-- Standings -->
+                    <div class="content-main-standings">
+                        <h1 class="standings-h1">League Standings</h1>
+                        <table class="standings-table">
+                            <thead class="standings-head">
+                                <tr class="standings-row">
+                                    <th>#</th>
+                                    <th>Club</th>
+                                    <th>P</th>
+                                    <th>GD</th>
+                                    <th>PTS</th>
+                                </tr>
+                            </thead>
+                            <tbody id="standingsBody" class="standings-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                    <!-- COLUMN 2 -->
+                    <div class="column-2">
+                        <!-- News -->
+                        <div class="content-main-news" id="news">
+                            <h1>Latest News</h1>
+                            <div class="newsBody">
+                                <div class="news-item-left" id="leftNews">
+                                <!-- Latest 3 big news displayed here -->
+                                </div>
+                                <div class="news-item-right" id="rightNews">
+                                <!-- 5 smaller news displayed here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- YOU TUBE Section -->
+                <section class="youtube-section">
+                    <div class="youtube-container">
+                        <div class="youtube-video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/lQvBt3tWv7M?si=pkS8GqPZDIcbgTTf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                        </div>
+                        <div class="youtube-description">
+                            <h1>Relive best moments of 2023</h1>
+                                <p>La Liga champions, farewell to Camp Nou, Bonmati's Ballon d'or and more</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TICKET SECTION -->
+                <section class="ticket-section" id="tickets">
+                    <h1>Barca Tickets</h1>
+                    <div class="ticket-container">
+                        <!-- Tickets diplsyaed here with 2 rows if screen = lg /// or diplsyaed as a column if screen =< md -->
+                        <div class="ticket-card" id="ticket-card">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OUR STORY SECTION -->
+                <section class="our-story-section" id="ourStory">
+                    <h1>Our Story</h1>
+                    <div class="timeline">
+                        <ul>
+                            <li>
+                              <span>1899</span>
+                              <div class="content">
+                                <h3>Foundation</h3>
+                                <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2018/03/13/7315687b-5d59-474b-9203-1105a3023c41/16070442.jpg">
+                                <p>
+                                    Hans Gamper (Winterthur, Switzerland,1877 – Barcelona, 1930) arrived in Barcelona in 1898 for professional reasons.During his free time, he played football with a group of friends in Bonanova.<br><br>
+
+                                    On 29 November, Gamper and eleven other men (Otto Kunzle and Walter Wild from Switzerland; John and William Parsons from England; Otto Maier from Germany; and Lluís d’Ossó, Bartomeu Terradas, Enric Ducal, Pere Cabot, Carles Pujol and Josep Llobet from Catalonia) came together at the Solé Gymnasium to form an association that would bear the city’s name and coat of arms: Futbol Club Barcelona.
+                                </p>
+                                
+                              </div>
+                            </li>
+                            <li>
+                              <span>1939-1950</span>
+                              <div class="content">
+                                <h3>Years of perseverance</h3>
+                                <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2018/03/13/d0b423ab-8c46-46f3-aedd-c849921a1787/16070638.jpg">
+                                <p>
+                                    The toughest moments experienced by FC Barcelona football club were the initial post-war years. The Club reached a point where it almost ceased to exist. Subject to relentless repression and reprisals by the authorities, the identity of the organisation was changed completely.<br><br>
+
+                                    The purges also affected the players; anyone who had gone on the tour to Mexico and the United States was suspended for two years. Many of the players were exiled abroad. The Club’s coat of arms and name were changed because they were not deemed to be sufficiently Spanish, and the Club’s presidents were scrupulously selected by the sports authorities until 1946. 
+                                </p>
+                                
+                              </div>
+                            </li>
+                            <li>
+                              <span>1969-1978</span>
+                              <div class="content">
+                                <h3>Johan Cruyff</h3>
+                                <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2018/03/13/a09686d7-ec65-47d1-b5c1-16cf46c97657/16183511.jpg">
+                                <p>
+                                    To put an end once and for all to the Club’s ill fate, a star player was needed to arouse interest amongst fans. The chosen one was Johan Cruyff, the Dutch forward who had triumphed throughout Europe with AFC Ajax of Amsterdam: Cruyff, at that time was considered the best player in the world. On 13 August 1973, Cruyff joined Barça. He became the leader of a talented team, managed by Rinus Michels, which brought the Camp Nou back to its former glory. Cruyff demonstrated an intelligent style of play and superb technique.<br><br>
+
+                                    The Dutch star went down in history for some unforgettable moments, like his memorable goal against Atlético Madrid on 22 December 1973. Cruyff flew into the air to intercept the ball from Rexach and beat the goalkeeper, Reina.
+                                </p>
+                              </div>
+                            </li>
+                            <li>
+                              <span>2008-2020</span>
+                              <div class="content">
+                                <h3>The best years in our history</h3>
+                                <img src="https://www.fcbarcelona.com/fcbarcelona/photo/2018/11/27/4b089d59-e50c-489f-91d2-8c306d86f6ac/mini_MESSI-E-INIESTA-COPA-01.jpg">
+                                <p>
+                                    This team was the culmination of everything that FC Barcelona stands for, and produced an amazing string of major titles, including two Champions Leagues and three Spanish Leagues, plus the long-awaited Clubs World Cup, which was finally won in 2009, that extraordinary year when Barcelona won all six major trophies, something unprecedented in the history of European football. Barça broke all kinds of records, played memorable matches and won just about every title on offer. But the finest hour for Guardiola's side came at Wembley on 28 May, 2011, when the world was enchanted by the kind of football that dreams are made of.<br><br>
+                                    
+                                    The world's press bestowed praise on this extraordinary side that had written one of the most incredible chapters in the history of the game. The Guardiola era ended in 2012 but Barça continued their success under Tito Vilanova (the league in 2012/13) and Luis Enrique who in 2015 won the Champions League, the League and the Copa del Rey in another historic treble winning season.
+                                </p>
+                              </div>
+                            </li>
+                          </ul>
+                    </div>
+                </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-social">
+                <a href="https://www.fcbarcelona.com/en/"><img src="/FCB_Icon.37c8cec7.png" class="footer-club-icon"></a>
+                <a href="https://www.instagram.com/fcbarcelona/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://es-es.facebook.com/fcbarcelona/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@fcbarcelona" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/user/fcbarcelona" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="https://twitter.com/FCBarcelona" target="_blank" class="social-icon"><i class="fab fa-x"></i></a>
+            </div>
+            <div class="footer-text">
+                <h2>Unofficial Website</h2>
+                <h3>*developed for portfolio purposes only</h3>
+                <p>2024 S Yuldashev</p>
+            </div>
+        </footer>
+    
+    
+    <script>setTimeout(function() {
+    // Hide the loader after 3 seconds
+    document.querySelector(".loader-wrapper").classList.add("hidden");
+}, 3000);
+
+</script>
+    <script>// To make navbar on smaller screens close once user clicks on the link
+document.addEventListener("DOMContentLoaded", function() {
+    const links = document.querySelectorAll(".menu a");
+    links.forEach(function(link) {
+        link.addEventListener("click", function() {
+            const checkbox = document.getElementById("checkbox_toggle");
+            if (checkbox.checked) checkbox.checked = false;
+        });
+    });
+});
+
+</script>
+    <script src="/index.20d2d83d.js" defer=""></script>
+    <script src="/index.217cf28f.js" defer=""></script>
+    <script src="/index.f7e5f8d9.js" defer=""></script>
+    <script src="/index.863362eb.js" defer=""></script>
+    <script src="/index.68efb864.js" defer=""></script>
+</body>
+</html>

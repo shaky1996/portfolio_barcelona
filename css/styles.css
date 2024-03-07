@@ -1,0 +1,710 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #00172e;
+    font-family: "Noto Sans Cham", sans-serif;
+}
+
+/* Loader */
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00172e; 
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader img {
+    width: 200px;
+    height: auto;
+    animation: grayscaleAnimation 3s infinite; /* Apply grayscale animation */
+}
+
+@keyframes grayscaleAnimation {
+    0% {
+        filter: grayscale(100%); /* Start with grayscale  */
+    }
+    100% {
+        filter: grayscale(0%); /* End with full color */
+    }
+}
+
+/* Hide the loader once the animation completes */
+.loader-wrapper.hidden {
+    display: none;
+}
+
+/* Navbar */
+  a {
+    text-decoration: none;
+  }
+  li {
+    list-style: none;
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: linear-gradient(to top, #5a0026, rgba(0, 0, 0, 0));
+    color: #fff;
+    border-bottom: 1px solid;
+    border-color: #edbb00;
+  }
+  .nav-links a {
+    color: #fff; 
+  }
+  .nav-links a:hover {
+    color: #edbb00
+  }
+  
+  /* NAVBAR LOGO */
+  .logo {
+    font-size: 32px;
+    color: #edbb00;
+  }
+  
+  /* NAVBAR MENU */
+  .menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+  }
+  .menu li:hover {
+    border-radius: 5px
+  }
+  .menu li {
+    padding: 5px;
+  }
+  
+/* By hiding the checkbox input element and associating it with the label element, users can toggle the checkbox's state by clicking the label, even though the checkbox itself is not visible */
+  input[type=checkbox] {
+    display: none;
+  } 
+  
+  /* HAMBURGER MENU */
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+  }
+  
+/* VIDEO SECTION */
+  .video-container {
+    margin-top: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 700px; 
+    overflow: hidden; 
+    background: linear-gradient(to bottom, #5a0026, rgba(0, 0, 0, 0));
+}
+
+.video-container video {
+    width: 80%;
+    height: 100%;
+    object-fit: cover; 
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* Will be displayed once screen wdith will be less than 992px */
+.video-container img {
+    display: none;
+}
+
+/* MAIN SECTION */
+.content-main {
+    width: 100%;
+    max-width: 1140px; 
+    margin: 50px auto 0;
+    padding: 0;
+    display: grid;
+    place-items: center; 
+    grid-template-columns: 1fr;
+    column-gap: 50px;
+    row-gap: 20px;
+    align-items: stretch;
+}
+
+/* Separating Grid into 2 columns */
+.column-1 {
+    grid-column: 1 / 2;
+}
+
+.column-2 {
+    grid-column: 2 / 2;
+}
+
+/* Standings */
+.content-main-standings {
+    display: flex;
+    flex-direction: column;
+    background-color: #aa0009;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.standings-h1 {
+    text-align: center;
+    color: white;
+    
+}
+
+.standings-table {
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 20px;
+    border-top: 1px solid;
+    border-color: #edbb00;
+}
+
+.standings-head {
+    text-align: center;
+    background-color: #818181;
+    font-size: 12px;
+}
+
+.standings-body td {
+    border-top: 1px solid;
+    border-color: #adadad;
+    padding: 5px;
+}
+
+.standings-body tr:nth-child(even) {
+    background-color: #59595924; /* Gray background color */
+}
+
+.standings-logo {
+    width: 20px;
+    margin-right: 2px;
+    vertical-align: middle;
+}
+
+/* Next Game */
+.content-main-nextGame {
+    background-color: #aa0009;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nextGame-h1 {
+    text-align: center;
+    color: white;
+    font-size: 22px;
+}
+
+.Game-body {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom, #140009, #5c001d);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: 1px solid;
+    border-color: #edbb00;
+    color: white;
+}
+
+.team {
+    flex: 1;
+    text-align: center;
+}
+
+.team-home {
+    margin-right: 20px;
+}
+
+.team-away {
+    margin-left: 20px; 
+}
+
+.nextGame-team-logo {
+    width: 60px;
+    padding: 10px;
+}
+
+.nextGame-league-logo {
+    width: 60px;
+    
+}
+
+.game-info {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+}
+
+.game-info-time {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Last Game */
+.content-main-lastGame {
+    display: flex;
+    flex-direction: column;
+    background-color: #aa0009;
+    border-radius: 20px;
+    width: 300px;
+    margin-top: 20px;
+}
+
+/* News */
+.content-main-news {
+    color: white;
+}
+
+.newsBody {
+    display: flex;
+    flex: row;
+}
+
+.leftNews {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.leftNews:hover h1,
+.leftNews:hover img {
+    color: #edbb00; 
+    
+}
+
+.leftNews:hover img {
+    transform: scale(1.03);
+}
+
+.leftNews a {
+    text-decoration: none;
+    color: white;
+}
+
+.leftNews-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}   
+
+.rightNews {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 8px;
+    padding-left: 20px;
+}
+
+.rightNews-img {
+    width: 100%;
+    object-fit: fill;
+    transition: transform 0.3s ease;
+}
+
+.rightNews:hover h1,
+.rightNews:hover img {
+    color: #edbb00; 
+}
+
+.rightNews:hover img {
+    transform: scale(1.1);
+}
+
+.rightNews a {
+    text-decoration: none;
+    color: white;
+}
+
+/* YouTube */
+.youtube-section {
+    margin-top: 20px;
+    margin-right: auto; 
+    margin-left: auto;
+}
+
+.youtube-container {
+    padding: 20px;
+    background-color: #edbb00;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.youtube-video iframe{
+    border-radius: 20px;
+}
+
+.youtube-description {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.youtube-description h1 {
+    font-style: italic;
+    font-weight: 900;
+}
+
+/* Tickets */
+.ticket-section {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+    color: white;
+}
+
+.ticket-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.ticket-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    margin: 10px;
+  }
+
+.row-1 {
+    display: flex;
+    flex-direction: row;
+}
+.row-2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.ticket-img {
+    width: 90%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.ticket-img:hover {
+    
+    transform: scale(1.1);
+}
+
+/* Our Story */
+.our-story-section {
+    background: linear-gradient(to bottom, #00172e 80%, #5c001d);
+    margin-top: 20px;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+
+.our-story-section h1 {
+    font-size: 28px;
+    color: white;
+}
+
+.timeline{
+    width:40%;
+    color:#fff;
+    padding:30px 20px;
+    
+}
+
+.timeline ul{
+    list-style-type:none;
+    border-left:10px solid #5c001d;
+    padding:10px 5px;
+}
+
+.timeline ul li{
+    padding:20px 20px;
+    position:relative;
+    cursor:pointer;
+    transition:.5s;
+}
+
+.timeline ul li span{
+    display:inline-block;
+    background-color:#5c001d;
+    border-radius:25px;
+    padding:2px 5px;
+    font-size:15px;
+    text-align:center;
+  }
+
+.timeline ul li .content h3{
+    color:#edbb00;
+    font-size:17px;
+    padding-top:5px;
+}
+
+.timeline ul li .content p{
+    padding:5px 0px 15px 0px;
+    font-size:15px;
+}
+
+.timeline ul li:before{
+    position:absolute;
+    content:'';
+    width:15px;
+    height:15px;
+    background-color:#edbb00;
+    border-radius:50%;
+    left:-17px;
+    top:28px;
+    transition:.5s;
+}
+
+.timeline ul li:hover{
+    background-color:#5c001d;
+}
+
+.timeline ul li:hover:before{
+    background-color:#edbb00;
+    box-shadow:0px 0px 10px 2px #edbb00;
+}
+
+.timeline img {
+    width: 100%;
+  }
+
+/* Footer */
+.footer {
+    border-top: 2px solid;
+    border-color: #edbb00;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #5c001d, black);
+    padding: 20px;
+}
+
+.footer-logo  {
+    justify-content: flex-start; 
+}
+
+.footer-logo img {
+    width: 20px; 
+}
+
+.footer-social {
+    display: flex;
+}
+
+.social-icon {
+    color: white;
+    font-size: 30px;
+    margin-right: 20px; 
+}
+
+.social-icon:hover {
+    color: #edbb00;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #818181;
+    font-size: 10px;
+}
+
+.footer-club-icon {
+    width: 40px;
+    margin-right: 20px;
+}
+
+/* Responsive Design */
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) { 
+
+.leftNews h1 {
+    font-size: 14px;
+}
+
+.leftNews-img {
+    width: 100%; /* Adjust the width as needed */
+    height: auto;
+    
+} 
+
+iframe {
+    width: 300px;
+    height: 200px;
+}
+
+.youtube-description {
+    font-size: 12px;
+}
+
+.ticket-section h1 {
+    font-size: 20px;
+}
+
+.card {
+    margin: 10px;
+}
+    
+/* Ticket section to display as column */
+.row-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-2 {
+    display: flex;
+    flex-direction: column;
+}
+    
+.ticket-img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+}
+
+.timeline{
+    width: 80%;
+    color:#fff;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Removing timline description */
+.timeline p {
+    display: none;
+    }
+
+.timeline img {
+    width: 200px;
+}
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media only screen and (max-width: 768px) { 
+
+    /* Replacing video with static Image */
+.video-container img {
+        display: flex;
+        object-fit: contain;
+        height: 100%;
+}
+
+.video-container video {
+    display: none;
+}
+
+/* Displaying Column 2 of left bigger news  */
+.column-2 {
+    grid-column: 1 / 1;
+    padding: 10px;
+}
+
+.content-main-news {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftNews {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    font-size: 14px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.leftNews h1 {
+    font-size: 16px;
+}
+
+.leftNews-img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Removing right smaller news from the view */
+.rightNews {
+    display: none;
+} }
+
+/* Large devices (desktops, 992px and down) */
+@media only screen and (max-width: 992px) { 
+
+    /* Responsive Navbar */
+.menu {
+        display:none;
+        position: absolute;
+        background: linear-gradient(to bottom, #5a0026, #00172e);
+        right: 0;
+        left: 0;
+        text-align: center;
+        margin-top: 20px;
+        padding: 16px 0;
+        z-index: 1000;
+}
+    
+.menu li:hover {
+        display: inline-block;
+        transition: 0.3s ease;
+}
+    
+    
+input[type=checkbox]:checked ~ .menu {
+        display: block;
+}
+    
+.hamburger {
+    display: block;
+}
+
+/* Removing column 1 with Next Game, Last Game, Standings from displaying */
+.column-1 {
+    display: none;
+} 
+
+/* To display YouTube section as a column */
+.youtube-container {
+    flex-direction: column;
+}
+
+.our-story-section h1 {
+    font-size: 20px;
+    color: white;
+}
+}

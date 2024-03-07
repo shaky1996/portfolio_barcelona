@@ -1,0 +1,663 @@
+body {
+  background-color: #00172e;
+  margin: 0;
+  padding: 0;
+  font-family: Noto Sans Cham, sans-serif;
+}
+
+.loader-wrapper {
+  z-index: 9999;
+  background-color: #00172e;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.loader img {
+  width: 200px;
+  height: auto;
+  animation: 3s infinite grayscaleAnimation;
+}
+
+@keyframes grayscaleAnimation {
+  0% {
+    filter: grayscale();
+  }
+
+  100% {
+    filter: grayscale(0%);
+  }
+}
+
+.loader-wrapper.hidden {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.navbar {
+  color: #fff;
+  background: linear-gradient(to top, #5a0026, #0000);
+  border-color: #edbb00;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  display: flex;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+.nav-links a:hover {
+  color: #edbb00;
+}
+
+.logo {
+  color: #edbb00;
+  font-size: 32px;
+}
+
+.menu {
+  gap: 1em;
+  font-size: 18px;
+  display: flex;
+}
+
+.menu li:hover {
+  border-radius: 5px;
+}
+
+.menu li {
+  padding: 5px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.hamburger {
+  -webkit-user-select: none;
+  user-select: none;
+  font-size: 24px;
+  display: none;
+}
+
+.video-container {
+  background: linear-gradient(#5a0026, #0000);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 700px;
+  margin-top: 1px;
+  display: flex;
+  overflow: hidden;
+}
+
+.video-container video {
+  object-fit: cover;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  width: 80%;
+  height: 100%;
+}
+
+.video-container img {
+  display: none;
+}
+
+.content-main {
+  grid-template-columns: 1fr;
+  place-items: stretch center;
+  gap: 20px 50px;
+  width: 100%;
+  max-width: 1140px;
+  margin: 50px auto 0;
+  padding: 0;
+  display: grid;
+}
+
+.column-1 {
+  grid-column: 1 / 2;
+}
+
+.column-2 {
+  grid-column: 2 / 2;
+}
+
+.content-main-standings {
+  background-color: #aa0009;
+  border-radius: 20px;
+  flex-direction: column;
+  margin-top: 20px;
+  display: flex;
+}
+
+.standings-h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.standings-table {
+  border-collapse: collapse;
+  background-color: #fff;
+  border-color: #edbb00;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-radius: 20px;
+}
+
+.standings-head {
+  text-align: center;
+  background-color: #818181;
+  font-size: 12px;
+}
+
+.standings-body td {
+  border-color: #adadad;
+  border-top-style: solid;
+  border-top-width: 1px;
+  padding: 5px;
+}
+
+.standings-body tr:nth-child(2n) {
+  background-color: #59595924;
+}
+
+.standings-logo {
+  vertical-align: middle;
+  width: 20px;
+  margin-right: 2px;
+}
+
+.content-main-nextGame {
+  background-color: #aa0009;
+  border-radius: 20px;
+  flex-direction: column;
+  display: flex;
+}
+
+.nextGame-h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+}
+
+.Game-body {
+  color: #fff;
+  background: linear-gradient(#140009, #5c001d);
+  border-color: #edbb00;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  align-items: center;
+  display: flex;
+}
+
+.team {
+  text-align: center;
+  flex: 1;
+}
+
+.team-home {
+  margin-right: 20px;
+}
+
+.team-away {
+  margin-left: 20px;
+}
+
+.nextGame-team-logo {
+  width: 60px;
+  padding: 10px;
+}
+
+.nextGame-league-logo {
+  width: 60px;
+}
+
+.game-info {
+  text-align: center;
+  flex: 1;
+  font-size: 12px;
+}
+
+.game-info-time {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.content-main-lastGame {
+  background-color: #aa0009;
+  border-radius: 20px;
+  flex-direction: column;
+  width: 300px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.content-main-news {
+  color: #fff;
+}
+
+.newsBody {
+  flex: row;
+  display: flex;
+}
+
+.leftNews {
+  flex-direction: column;
+  flex: 2;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  font-size: 14px;
+  display: flex;
+}
+
+.leftNews:hover h1, .leftNews:hover img {
+  color: #edbb00;
+}
+
+.leftNews:hover img {
+  transform: scale(1.03);
+}
+
+.leftNews a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.leftNews-img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+  transition: transform .3s;
+}
+
+.rightNews {
+  flex-direction: column;
+  flex: .5;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 20px;
+  font-size: 8px;
+  display: flex;
+}
+
+.rightNews-img {
+  object-fit: fill;
+  width: 100%;
+  transition: transform .3s;
+}
+
+.rightNews:hover h1, .rightNews:hover img {
+  color: #edbb00;
+}
+
+.rightNews:hover img {
+  transform: scale(1.1);
+}
+
+.rightNews a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.youtube-section {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.youtube-container {
+  background-color: #edbb00;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+}
+
+.youtube-video iframe {
+  border-radius: 20px;
+}
+
+.youtube-description {
+  flex-direction: column;
+  margin-left: 20px;
+  font-size: 20px;
+  display: flex;
+}
+
+.youtube-description h1 {
+  font-style: italic;
+  font-weight: 900;
+}
+
+.ticket-section {
+  color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 20px;
+  display: flex;
+}
+
+.ticket-container {
+  justify-content: center;
+  padding: 20px;
+  display: flex;
+}
+
+.ticket-card {
+  flex-direction: column;
+  display: flex;
+}
+
+.card {
+  margin: 10px;
+}
+
+.row-1, .row-2 {
+  flex-direction: row;
+  display: flex;
+}
+
+.ticket-img {
+  width: 90%;
+  height: auto;
+  transition: transform .3s;
+}
+
+.ticket-img:hover {
+  transform: scale(1.1);
+}
+
+.our-story-section {
+  background: linear-gradient(#00172e 80%, #5c001d);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+}
+
+.our-story-section h1 {
+  color: #fff;
+  font-size: 28px;
+}
+
+.timeline {
+  color: #fff;
+  width: 40%;
+  padding: 30px 20px;
+}
+
+.timeline ul {
+  border-left: 10px solid #5c001d;
+  padding: 10px 5px;
+  list-style-type: none;
+}
+
+.timeline ul li {
+  cursor: pointer;
+  padding: 20px;
+  transition: all .5s;
+  position: relative;
+}
+
+.timeline ul li span {
+  text-align: center;
+  background-color: #5c001d;
+  border-radius: 25px;
+  padding: 2px 5px;
+  font-size: 15px;
+  display: inline-block;
+}
+
+.timeline ul li .content h3 {
+  color: #edbb00;
+  padding-top: 5px;
+  font-size: 17px;
+}
+
+.timeline ul li .content p {
+  padding: 5px 0 15px;
+  font-size: 15px;
+}
+
+.timeline ul li:before {
+  content: "";
+  background-color: #edbb00;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  transition: all .5s;
+  position: absolute;
+  top: 28px;
+  left: -17px;
+}
+
+.timeline ul li:hover {
+  background-color: #5c001d;
+}
+
+.timeline ul li:hover:before {
+  background-color: #edbb00;
+  box-shadow: 0 0 10px 2px #edbb00;
+}
+
+.timeline img {
+  width: 100%;
+}
+
+.footer {
+  background: linear-gradient(#5c001d, #000);
+  border-color: #edbb00;
+  border-top-style: solid;
+  border-top-width: 2px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  display: flex;
+}
+
+.footer-logo {
+  justify-content: flex-start;
+}
+
+.footer-logo img {
+  width: 20px;
+}
+
+.footer-social {
+  display: flex;
+}
+
+.social-icon {
+  color: #fff;
+  margin-right: 20px;
+  font-size: 30px;
+}
+
+.social-icon:hover {
+  color: #edbb00;
+}
+
+.footer-text {
+  color: #818181;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  display: flex;
+}
+
+.footer-club-icon {
+  width: 40px;
+  margin-right: 20px;
+}
+
+@media only screen and (width <= 600px) {
+  .leftNews h1 {
+    font-size: 14px;
+  }
+
+  .leftNews-img {
+    width: 100%;
+    height: auto;
+  }
+
+  iframe {
+    width: 300px;
+    height: 200px;
+  }
+
+  .youtube-description {
+    font-size: 12px;
+  }
+
+  .ticket-section h1 {
+    font-size: 20px;
+  }
+
+  .card {
+    margin: 10px;
+  }
+
+  .row-1, .row-2 {
+    flex-direction: column;
+    display: flex;
+  }
+
+  .ticket-img {
+    width: 100%;
+    height: auto;
+    transition: transform .3s;
+  }
+
+  .timeline {
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .timeline p {
+    display: none;
+  }
+
+  .timeline img {
+    width: 200px;
+  }
+}
+
+@media only screen and (width <= 768px) {
+  .video-container img {
+    object-fit: contain;
+    height: 100%;
+    display: flex;
+  }
+
+  .video-container video {
+    display: none;
+  }
+
+  .column-2 {
+    grid-column: 1 / 1;
+    padding: 10px;
+  }
+
+  .content-main-news {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .leftNews {
+    flex-direction: column;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .leftNews h1 {
+    font-size: 16px;
+  }
+
+  .leftNews-img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  .rightNews {
+    display: none;
+  }
+}
+
+@media only screen and (width <= 992px) {
+  .menu {
+    text-align: center;
+    z-index: 1000;
+    background: linear-gradient(#5a0026, #00172e);
+    margin-top: 20px;
+    padding: 16px 0;
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  .menu li:hover {
+    transition: all .3s;
+    display: inline-block;
+  }
+
+  input[type="checkbox"]:checked ~ .menu, .hamburger {
+    display: block;
+  }
+
+  .column-1 {
+    display: none;
+  }
+
+  .youtube-container {
+    flex-direction: column;
+  }
+
+  .our-story-section h1 {
+    color: #fff;
+    font-size: 20px;
+  }
+}
+/*# sourceMappingURL=index.748ad148.css.map */
