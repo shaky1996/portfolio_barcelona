@@ -1,0 +1,39 @@
+name: Deploy Barcelona Website
+
+on:
+  push:
+    branches: [ main ]  # or your default branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    - name: Create .env file
+      run: |
+        echo API_KEY=${{ secrets.API_KEY }} > .env
+        echo URL_NEXT_GAME=${{ secrets.URL_NEXT_GAME }} >> .env
+        echo URL_LAST_GAME=${{ secrets.URL_LAST_GAME }} >> .env
+        echo URL_STANDINGS=${{ secrets.URL_STANDINGS }} >> .env
+        echo API_KEY_NEWS=${{ secrets.API_KEY_NEWS }} >> .env
+        echo URL_NEWS=${{ secrets.URL_NEWS }} >> .env
+       
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Build Project
+      run: npm run build
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.5
+      with:
+        branch: gh-pages  # The branch you're deploying to
+        folder: build  # The folder the action should deploy
+        token: ${{ secrets.GITHUB_TOKEN }}
