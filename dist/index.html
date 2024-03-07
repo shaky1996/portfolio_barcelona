@@ -14,6 +14,13 @@
 
 </head>
 <body>
+    <!-- LOADER -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <img src="/FCB_Icon.37c8cec7.png" alt="Loader">
+        </div>
+    </div>
+
     <div id="home">
         <!-- NAVBAR -->
           <nav class="navbar">
@@ -198,6 +205,12 @@
         </footer>
     
     
+    <script>setTimeout(function() {
+    // Hide the loader after 3 seconds
+    document.querySelector(".loader-wrapper").classList.add("hidden");
+}, 3000);
+
+</script>
     <script>// To make navbar on smaller screens close once user clicks on the link
 document.addEventListener("DOMContentLoaded", function() {
     const links = document.querySelectorAll(".menu a");

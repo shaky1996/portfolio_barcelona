@@ -5,6 +5,39 @@ body {
   font-family: Noto Sans Cham, sans-serif;
 }
 
+.loader-wrapper {
+  z-index: 9999;
+  background-color: #00172e;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.loader img {
+  width: 200px;
+  height: auto;
+  animation: 3s infinite grayscaleAnimation;
+}
+
+@keyframes grayscaleAnimation {
+  0% {
+    filter: grayscale();
+  }
+
+  100% {
+    filter: grayscale(0%);
+  }
+}
+
+.loader-wrapper.hidden {
+  display: none;
+}
+
 a {
   text-decoration: none;
 }

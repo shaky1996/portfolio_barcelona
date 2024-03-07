@@ -1,8 +1,44 @@
+
+
 body {
     margin: 0;
     padding: 0;
     background-color: #00172e;
     font-family: "Noto Sans Cham", sans-serif;
+}
+
+/* Loader */
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00172e; 
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader img {
+    width: 200px;
+    height: auto;
+    animation: grayscaleAnimation 3s infinite; /* Apply grayscale animation */
+}
+
+@keyframes grayscaleAnimation {
+    0% {
+        filter: grayscale(100%); /* Start with grayscale  */
+    }
+    100% {
+        filter: grayscale(0%); /* End with full color */
+    }
+}
+
+/* Hide the loader once the animation completes */
+.loader-wrapper.hidden {
+    display: none;
 }
 
 /* Navbar */
