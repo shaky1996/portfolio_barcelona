@@ -11,7 +11,7 @@ This project is a responsive website dedicated to FC Barcelona, one of the most 
 ## Features
 
 - **Responsive Design:** The website is designed to provide an optimal viewing experience across a wide range of devices, from desktops to smartphones.
-- **Live Data Integration:** Utilizing APIs, the website fetches real-time information including news updates, upcoming matches, recent results, and current standings of FC Barcelona in various competitions.
+- **Live Data Integration:** Utilizing APIs, the website fetches real-time information including news updates, upcoming matches, recent results, and current standings of FC Barcelona in Spanish Football League (La Liga).
 - **News Section:** Stay updated with the latest news and articles related to Spanish Footbal League (La Liga).
 - **Next Game:** Get information about the next match, including date, time, location and opponent.
 - **Results:** View the most recent results of FC Barcelona match.
