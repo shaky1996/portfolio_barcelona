@@ -1,7 +1,7 @@
-const API_KEY = process.env.API_KEY
-const URL = process.env.URL_NEXT_GAME
+const API_KEY = process.env.API_KEY;
+const URL = process.env.URL_NEXT_GAME;
 
-const nextFixture = async () => {
+const fetchNextFixture = async () => {
     const url = URL;
     const options = {
         method: 'GET',
@@ -10,7 +10,7 @@ const nextFixture = async () => {
             'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
         }
     };
-    
+
     try {
         const response = await fetch(url, options);
         const data = await response.json();
@@ -18,47 +18,41 @@ const nextFixture = async () => {
 
         // Check if fixture data exists
         if (data.response && data.response[0]) {
-            const fixture = data.response[0];
-            const {
-                fixture: { date, venue },
-                teams: { home, away }
-            } = fixture;
-
-            // Formatting date into Month/Date/Year
-            const gameDate = new Date(date);
-            const options = {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric'
-            };
-            const localDate = gameDate.toLocaleDateString(undefined, options);
-            // Formatting time into Hour/Minutes
-            const localTime = gameDate.toLocaleTimeString([], {
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-
-            const nextGameContainer = document.getElementById('nextGame');
-
-            nextGameContainer.innerHTML = `
-                <div class="team-home">
-                    <img src="${home.logo}" alt="${home.name} Logo" class="nextGame-team-logo">
-                </div>
-                <div class="game-info">
-                    <p><i class="fa-regular fa-calendar"></i> ${localDate}</p>
-                    <p class="game-info-time">${localTime}</p>
-                    <p><i class="fa-solid fa-location-dot"></i> ${venue.city}</p>
-                </div>
-                <div class="team-away">
-                    <img src="${away.logo}" alt="${away.name} Logo" class="nextGame-team-logo">
-                </div>
-            `;
+            return data.response[0]; // Return the fixture data
         } else {
-            console.error('Error: Fixture data is missing.');
+            throw new Error('Error: Fixture data is missing.');
         }
     } catch (error) {
-        console.log(error);
-        
+        throw error; // Rethrow the error to handle retries
+    }
+};
+
+const retryFetchNextFixture = async (maxRetries, retryDelay) => {
+    let retries = 0;
+    let lastError = null;
+
+    while (retries < maxRetries) {
+        try {
+            const fixture = await fetchNextFixture();
+            return fixture; // If successful, return the fixture data
+        } catch (error) {
+            retries++;
+            lastError = error;
+            console.error(`Attempt ${retries} failed: ${error}`);
+            await new Promise(resolve => setTimeout(resolve, retryDelay)); // Wait before retrying
+        }
+    }
+
+    throw lastError; // If all retries fail, throw the last error encountered
+};
+
+const nextFixture = async () => {
+    try {
+        const fixture = await retryFetchNextFixture(3, 1000); // Retry up to 3 times with a 1-second delay
+        // Proceed with rendering the fixture data...
+    } catch (error) {
+        console.error('Failed to fetch fixture:', error);
+        // Handle the error appropriately, e.g., display an error message to the user
     }
 };
 
