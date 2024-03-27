@@ -14,7 +14,7 @@ const fetchNextFixture = async () => {
     try {
         const response = await fetch(url, options);
         const data = await response.json();
-        console.log(data);
+        
 
         // Check if fixture data exists
         if (data.response && data.response[0]) {

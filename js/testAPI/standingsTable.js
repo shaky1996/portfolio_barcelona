@@ -13,7 +13,7 @@ const fetchStandings = async () => {
     try {
         const response = await fetch(URL, options);
         const data = await response.json();
-        console.log(data);
+        
 
         return data.response; // Return the standings data
     } catch (error) {

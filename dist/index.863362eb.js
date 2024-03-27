@@ -585,7 +585,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"3PPWK":[function(require,module,exports) {
 const API_KEY = "c9cc6e7562msh41c9bae593c588ep183cf6jsn6e04fb87dd9f";
-const URL = "https://football-news-aggregator-live.p.rapidapi.com/news/fourfourtwo/laliga";
+const URL = "https://football-news-aggregator-live.p.rapidapi.com/news/espn";
 const fetchNews = async ()=>{
     const url = URL;
     const options = {
@@ -598,7 +598,6 @@ const fetchNews = async ()=>{
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        console.log(result);
         return result; // Return the news data
     } catch (error) {
         throw error; // Rethrow the error to handle retries
@@ -636,7 +635,7 @@ const renderNews = (newsData)=>{
     leftNewsContainer.innerHTML = leftNews.map((leftNewsItem)=>`
             <div class="leftNews">
                 <a href="${leftNewsItem.url}" target="_blank">
-                    <img src="${leftNewsItem.news_img}" alt="${leftNewsItem.title} Logo" class="leftNews-img">
+                    <img src="${leftNewsItem.img}" alt="${leftNewsItem.title} Logo" class="leftNews-img">
                     <h1>${leftNewsItem.title}</h1>                    
                 </a>
             </div>
@@ -644,7 +643,7 @@ const renderNews = (newsData)=>{
     rightNewsContainer.innerHTML = rightNews.map((rightNewsItem)=>`
             <div class="rightNews">
                 <a href="${rightNewsItem.url}" target="_blank">
-                    <img src="${rightNewsItem.news_img}" alt="${rightNewsItem.title} Logo" class="rightNews-img">
+                    <img src="${rightNewsItem.img}" alt="${rightNewsItem.title} Logo" class="rightNews-img">
                     <h1>${rightNewsItem.title}</h1>
                 </a>
             </div>

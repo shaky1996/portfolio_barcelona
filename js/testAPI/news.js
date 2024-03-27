@@ -14,7 +14,7 @@ const fetchNews = async () => {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        console.log(result);
+        
 
         return result; // Return the news data
     } catch (error) {
@@ -63,7 +63,7 @@ const renderNews = (newsData) => {
         (leftNewsItem) => `
             <div class="leftNews">
                 <a href="${leftNewsItem.url}" target="_blank">
-                    <img src="${leftNewsItem.news_img}" alt="${leftNewsItem.title} Logo" class="leftNews-img">
+                    <img src="${leftNewsItem.img}" alt="${leftNewsItem.title} Logo" class="leftNews-img">
                     <h1>${leftNewsItem.title}</h1>                    
                 </a>
             </div>
@@ -74,7 +74,7 @@ const renderNews = (newsData) => {
         (rightNewsItem) => `
             <div class="rightNews">
                 <a href="${rightNewsItem.url}" target="_blank">
-                    <img src="${rightNewsItem.news_img}" alt="${rightNewsItem.title} Logo" class="rightNews-img">
+                    <img src="${rightNewsItem.img}" alt="${rightNewsItem.title} Logo" class="rightNews-img">
                     <h1>${rightNewsItem.title}</h1>
                 </a>
             </div>
