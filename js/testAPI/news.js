@@ -59,7 +59,7 @@ const renderNews = (newsData) => {
     const leftNewsContainer = document.getElementById('leftNews');
     const rightNewsContainer = document.getElementById('rightNews');
 
-    leftNewsContainer.innerHTML = leftNews.map(
+    leftNewsContainer.innerHTML = leftNews?.map(
         (leftNewsItem) => `
             <div class="leftNews">
                 <a href="${leftNewsItem.url}" target="_blank">
@@ -70,7 +70,7 @@ const renderNews = (newsData) => {
         `
     ).join('');
 
-    rightNewsContainer.innerHTML = rightNews.map(
+    rightNewsContainer.innerHTML = rightNews?.map(
         (rightNewsItem) => `
             <div class="rightNews">
                 <a href="${rightNewsItem.url}" target="_blank">
