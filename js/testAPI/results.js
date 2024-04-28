@@ -1,3 +1,5 @@
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
 const fetchLastResult = async () => {
     const API_KEY = process.env.API_KEY;
     const URL = process.env.URL_LAST_GAME;
@@ -55,15 +57,15 @@ const renderLastResult = (lastResult) => {
     `;
 };
 
-const results = async () => {
+const fetchDataAndRender = async () => {
     try {
+        await delay(2000); // 1-second delay
         const lastResult = await fetchLastResult();
-        // Proceed with rendering the last result data...
         renderLastResult(lastResult);
     } catch (error) {
-        console.error('Failed to fetch last result:', error);
+        console.error('Failed to fetch and render last result:', error);
         // Handle the error appropriately, e.g., display an error message to the user
     }
 };
 
-results();
+fetchDataAndRender();

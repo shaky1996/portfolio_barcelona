@@ -584,6 +584,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"lyqDO":[function(require,module,exports) {
+const delay = (ms)=>new Promise((resolve)=>setTimeout(resolve, ms));
 const fetchLastResult = async ()=>{
     const API_KEY = "c9cc6e7562msh41c9bae593c588ep183cf6jsn6e04fb87dd9f";
     const URL = "https://api-football-v1.p.rapidapi.com/v3/fixtures?season=2023&team=529&last=1";
@@ -627,17 +628,17 @@ const renderLastResult = (lastResult)=>{
         </div>
     `;
 };
-const results = async ()=>{
+const fetchDataAndRender = async ()=>{
     try {
+        await delay(2000); // 1-second delay
         const lastResult = await fetchLastResult();
-        // Proceed with rendering the last result data...
         renderLastResult(lastResult);
     } catch (error) {
-        console.error("Failed to fetch last result:", error);
+        console.error("Failed to fetch and render last result:", error);
     // Handle the error appropriately, e.g., display an error message to the user
     }
 };
-results();
+fetchDataAndRender();
 
 },{}]},["7ppK9","lyqDO"], "lyqDO", "parcelRequire7389")
 
